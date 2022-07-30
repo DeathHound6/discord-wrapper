@@ -61,6 +61,34 @@ export class User {
          * @type {Boolean}
          */
         this.bot = data.bot || false;
+        /**
+         * @type {Flags}
+         */
+        this.flags = data.flags ? new Flags(data.flags) : new Flags(data.public_flags);
+        /**
+         * @type {String?}
+         */
+        this.email = this.bot ? null : data.email || null;
+        /**
+         * @type {String}
+         */
+        this.bio = data.bio || "";
+        /**
+         * @type {String}
+         */
+        this.locale = this.bot || !data.locale ? "en-US" : data.locale;
+        /**
+         * @type {Boolean}
+         */
+        this.mfaEnabled = data.mfa_enabled || false;
+        /**
+         * @type {String}
+         */
+        this.nitro = data.premium_type == 0 ? "None" : data.premium_type == 1 ? "Nitro Classic" : "Nitro";
+        /**
+         * @type {Boolean}
+         */
+        this.emailVerified = data.verified || false;
     }
 
     /**
@@ -69,7 +97,7 @@ export class User {
      * @returns {String} The user's avatar URL
      */
     avatarURL(options) {
-        return this.client.rest.cdn.getAvatarURL(this.id, this.avatarHash, options);
+        return this.client.rest.cdn.getUserAvatarURL(this.id, this.avatarHash, options);
     }
 
     /**

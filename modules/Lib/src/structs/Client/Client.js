@@ -1,16 +1,26 @@
 import { EventEmitter } from "events";
 import { RestManager } from "../../managers/Rest";
-import { WebSocketManager } from "../../managers/WebSocket";
+import { WebSocketManager } from "../../managers/Websocket/WebSocket";
 import { User } from "../User";
 
 export class Client extends EventEmitter {
+    /**
+     * 
+     * @param {ClientOptions} options 
+     */
     constructor(options) {
+        /**
+         * @type {WebSocketManager}
+         */
         this.ws = new WebSocketManager(this);
+        /**
+         * @type {RestManager}
+         */
         this.rest = new RestManager(options.rest);
     }
 
     get user() {
-
+        return new User(this, await this.rest._request("/users/@me"));
     }
 
     /**
