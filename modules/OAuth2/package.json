@@ -1,0 +1,13 @@
+{
+    "name": "@deathhound/discord-wrapper-oauth2",
+    "version": "0.0.1",
+    "main": "index.js",
+    "typings": "index.d.ts",
+    "scripts": {
+        "test": "mocha tests/index.js"
+    },
+    "devDependencies": {
+        "express": "^4.18.1",
+        "mocha": "^10.0.0"
+    }
+}
