@@ -1,0 +1,40 @@
+h1 {
+    font-size: 40px;
+    position: absolute;
+    right: 200px;
+}
+
+ h2 {
+    font-size: 25px;
+    position: absolute;
+    right: 240px;
+}
+
+li {
+    float: left;
+    list-style-type: none;
+    border: black;
+    border-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-color: black;
+}
+
+a:hover {
+    background-color: blue;
+}
+
+.aboutustext{
+    position: absolute;
+    right: 150px;
+}
+
+#aboutus{
+    position: absolute;
+    right: 150px;
+    word-wrap: break-word;
+}
