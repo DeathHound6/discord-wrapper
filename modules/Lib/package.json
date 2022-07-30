@@ -21,5 +21,8 @@
     },
     "devDependencies": {
         "mocha": "^10.0.0"
+    },
+    "optionalDependencies": {
+        "erlpack": "^0.1.4"
     }
 }
