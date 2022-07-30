@@ -4,10 +4,16 @@ import { CDNManager } from "./CDN";
 
 export class RestManager {
     /**
-     * @param {RESTOptions} options 
+     * @param {RESTOptions} options
      */
     constructor(options) {
+        /**
+         * @type {String}
+         */
         this.baseURL = `https://discord.com/api/v${options.version}`;
+        /**
+         * @type {CDNManager}
+         */
         this.cdn = new CDNManager();
     }
 
